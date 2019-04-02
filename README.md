@@ -28,6 +28,27 @@ from nltk.corpus import stopwords
 set(stopwords.words('english'))
 ```
 
+### Evaluation of Models
+#### 1. Multi-nomial Naive Bayes
+* Confusion matrix:
+
+<img src="images/mul_cm.png"  height=50% width=50%>
+
+* Accuracy:
+
+<img src="images/mul_acc.png"  height=50% width=50%>
+
+#### 2. Gaussian Naive Bayes
+* Confusion matrix:
+
+<img src="images/gs_cm.png"  height=50% width=50%>
+
+* Accuracy:
+
+<img src="images/gs_acc.png"  height=50% width=50%>
+
+**Note:** *Multinomial can perform good when shrink the max_feature from 13000 to 1500 with avg acc: 92%.*
+
 
 
 
