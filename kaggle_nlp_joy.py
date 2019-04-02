@@ -21,9 +21,7 @@ from nltk.stem.porter import PorterStemmer
 
 
 #======================================#
-
 #             Data Insight             #
-
 #======================================#
 
 # Importing the dataset:
@@ -52,9 +50,7 @@ y = yelp_class['stars']
 
 
 #======================================#
-
 #          Data preprocessing          #
-
 #======================================#
 
 corpus = []
@@ -91,9 +87,7 @@ X = cv.fit_transform(corpus).toarray()
 
 
 #======================================#
-
 #         Training Our Models          #
-
 #======================================#
 
 
@@ -116,9 +110,7 @@ gaussian_y_pred = gaussian_nb.predict(X_test)
 
 
 #======================================#
-
 #           Model Evaluation           #
-
 #======================================#
 
 from sklearn.metrics import confusion_matrix, classification_report
