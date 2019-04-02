@@ -12,6 +12,19 @@ import pandas as pd
 
 import seaborn as sns
 
+import re
+import nltk
+# nltk.download('stopwords')
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
+
+
+#======================================#
+
+#             Data Insight             #
+
+#======================================#
 
 # Importing the dataset:
 yelp = pd.read_csv('kaggle_dataset/yelp_10k.csv')
@@ -35,11 +48,14 @@ yelp_class  = yelp[(yelp['stars'] == 1) | (yelp['stars'] == 5)]
 X = yelp_class['text']
 y = yelp_class['stars']
 
-import re
-import nltk
-# nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
+
+
+
+#======================================#
+
+#          Data preprocessing          #
+
+#======================================#
 
 corpus = []
 ps = PorterStemmer()
@@ -60,7 +76,6 @@ def text_process(text):
     return review
     
 
-# Data preprocessing:
 for i in range(yelp_class.shape[0]):
     review = text_process(yelp_class['text'].iloc[i])
     corpus.append(review)
@@ -72,6 +87,14 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 cv = CountVectorizer(max_features=1500)
 X = cv.fit_transform(corpus).toarray()
+
+
+
+#======================================#
+
+#         Training Our Models          #
+
+#======================================#
 
 
 # Splitting the dataset into the Training set and Test set
@@ -92,6 +115,11 @@ gaussian_nb.fit(X_train, y_train)
 gaussian_y_pred = gaussian_nb.predict(X_test)
 
 
+#======================================#
+
+#           Model Evaluation           #
+
+#======================================#
 
 from sklearn.metrics import confusion_matrix, classification_report
 mul_cm = confusion_matrix(y_test, mul_y_pred)
