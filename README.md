@@ -9,7 +9,7 @@ Sentiment Analysis for Restaurant Reviews.
 ### Dataset
 [10k Yelp Restaurant Reviews Dataset](https://www.dropbox.com/s/wc6rzl1a2os721d/yelp.csv?dl=0)
 
-<img src="images/dataset.png"  height=60% width=60%>
+<img src="images/dataset.png"  height=80% width=80%>
 
 ### NLTK (Natural Language Toolkit)
 **NLTK(Natural Language Toolkit)** in python has a list of stopwords stored in 16 different languages.
@@ -32,7 +32,7 @@ set(stopwords.words('english'))
 #### 1. Multi-nomial Naive Bayes
 * Confusion matrix:
 
-<img src="images/mul_cm.png"  height=50% width=50%>
+<img src="images/mul_cm.png"  height=30% width=30%>
 
 * Accuracy:
 
@@ -41,7 +41,7 @@ set(stopwords.words('english'))
 #### 2. Gaussian Naive Bayes
 * Confusion matrix:
 
-<img src="images/gs_cm.png"  height=50% width=50%>
+<img src="images/gs_cm.png"  height=30% width=30%>
 
 * Accuracy:
 
